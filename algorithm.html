@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>HLS interview</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <div class="container" style="margin-top: 40px;">
+        <h1 class="text-center">HLS interview</h1>
+        <h3 class="text-center">Given five positive integers: <span id="init"></span></h3>
+    </div>
+    <div id="exTab1" class="container text-center">
+        <ul class="nav nav-pills justify-content-center">
+            <li class="active" style="margin-right: 50px;">
+                <a href="#1a" data-toggle="tab">Result</a>
+            </li>
+            <li style="margin-right: 50px;"><a href="#2a" data-toggle="tab">Min and Max number in array</a>
+            </li>
+            <li style="margin-right: 50px;"><a href="#3a" data-toggle="tab">Even and Odd number in array</a>
+            </li>
+            <li><a href="#4a" data-toggle="tab">Total of array</a>
+            </li>
+
+        </ul>
+
+        <div class="tab-content clearfix" style="margin-top: 40px;">
+            <div class="tab-pane active" id="1a">
+                <h3>Minimum and maximum values that can be calculated by summing exactly four of the five
+                    integers are <span id="result"></span></h3>
+            </div>
+            <div class="tab-pane" id="2a">
+                <h3>Min number in array is <span id="min"></span></h3>
+                <h3>Max number in array is <span id="max"></span></h3>
+            </div>
+            <div class="tab-pane" id="3a">
+                <h3 id="no-even-number">Even number in array are <span id="even"></span></h3>
+                <h3 id="no-odd-number">Odd number in array are <span id="odd"></span></h3>
+            </div>
+            <div class="tab-pane" id="4a">
+                <h3>Total of array is <span id="total"></span></h3>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+
+    <script>
+        let arr = [1, 3, 5, 7, 9];
+        const sumArr = arr.reduce((total, num) => total + num, 0);
+        let minSum = sumArr;
+        let maxSum = 0;
+        let minNum = arr[0];
+        let maxNum = arr[0];
+        let evenNum = [];
+        let oddNum = [];
+
+        for (i = 0; i < arr.length; i++) {
+            let number = sumArr - arr[i];
+
+            if (minSum > number) {
+                minSum = number
+            }
+
+            if (maxSum < number) {
+                maxSum = number
+            }
+
+            if (minNum > arr[i]) {
+                minNum = arr[i]
+            }
+
+            if (maxNum < arr[i]) {
+                maxNum = arr[i]
+            }
+
+            if (arr[i] % 2 === 0) {
+                evenNum.push(arr[i])
+            } else {
+                oddNum.push(arr[i])
+            }
+        }
+
+        evenNum.sort();
+        oddNum.sort();
+
+        document.getElementById("init").innerHTML = arr.join(", ");
+        document.getElementById("result").innerHTML = minSum + " " + maxSum;
+        document.getElementById("min").innerHTML = minNum;
+        document.getElementById("max").innerHTML = maxNum;
+        document.getElementById("even").innerHTML = evenNum.join(", ");
+        document.getElementById("odd").innerHTML = oddNum.join(", ");
+        document.getElementById("total").innerHTML = sumArr;
+
+        if (evenNum[0] === undefined) {
+            document.getElementById("no-even-number").innerHTML = "There are no even numbers";
+        }
+        if (oddNum[0] === undefined) {
+            document.getElementById("no-odd-number").innerHTML = "There are no odd numbers";
+        }
+    </script>
+
+</body>
+
+</html>
