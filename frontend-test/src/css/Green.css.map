@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EAChB,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,OAAO;EACd,OAAO,EAAE,MAAM;CAQhB;;AAXD,AAKE,iBALe,CAKf,KAAK,CAAC;EACJ,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,KAAK;EAChB,WAAW,EAAE,GAAG;EAChB,cAAc,EAAE,GAAG;CACpB",
+    "sources": [
+        "../Green/Green.scss"
+    ],
+    "names": [],
+    "file": "Green.css"
+}

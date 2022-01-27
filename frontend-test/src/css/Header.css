@@ -1,0 +1,39 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 0;
+}
+
+.header .logo img {
+  width: 80px;
+}
+
+.header .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .user .content {
+  font-weight: 500;
+  text-align: end;
+  margin-right: 20px;
+}
+
+.header .user .content .intro {
+  font-style: italic;
+  color: #969696;
+}
+
+.header .user .user-img img {
+  width: 80px;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=Header.css.map */
